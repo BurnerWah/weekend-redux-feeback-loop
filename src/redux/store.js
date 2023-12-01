@@ -1,4 +1,8 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux'
+import {
+  applyMiddleware,
+  combineReducers,
+  legacy_createStore as createStore,
+} from 'redux'
 import logger from 'redux-logger'
 import { comments, feeling, supported, understanding } from './reducers'
 
