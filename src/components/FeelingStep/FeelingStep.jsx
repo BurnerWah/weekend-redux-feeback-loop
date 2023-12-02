@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 export default function FeelingStep() {
   /** @type {import('redux').Dispatch<Actions>} */
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const [feelingInput, setFeelingInput] = useState(0)
 
@@ -24,6 +26,8 @@ export default function FeelingStep() {
             type: 'SET_FEELING',
             payload: feelingInput,
           })
+          setFeelingInput(0)
+          history.push('/understanding')
         }}
         data-testid="next"
       >
