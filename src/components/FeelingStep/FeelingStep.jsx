@@ -7,26 +7,26 @@ export default function FeelingStep() {
   const dispatch = useDispatch()
   const history = useHistory()
 
-  const [feelingInput, setFeelingInput] = useState(0)
+  const [feeling, setFeeling] = useState(0)
 
   return (
     <div>
       <h2>How are you feeling today?</h2>
       <input
-        value={feelingInput}
-        onChange={(e) => setFeelingInput(e.target.valueAsNumber)}
+        value={feeling}
+        onChange={(e) => setFeeling(e.target.valueAsNumber)}
         type="number"
         placeholder="1-5"
         data-testid="input"
       />
       <button
         onClick={() => {
-          console.log('feelingInput:', feelingInput)
+          console.log('feelingInput:', feeling)
           dispatch({
             type: 'SET_FEELING',
-            payload: feelingInput,
+            payload: feeling,
           })
-          setFeelingInput(0)
+          setFeeling(0)
           history.push('/understanding')
         }}
         data-testid="next"
