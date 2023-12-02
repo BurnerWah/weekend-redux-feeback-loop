@@ -6,7 +6,7 @@ export default function Review() {
       <p>Understanding: {/*TODO*/}</p>
       <p>Support: {/*TODO*/}</p>
       <p>Comments: {/*TODO*/}</p>
-      <button>Submit</button>
+      <button data-testid="next">Submit</button>
     </div>
   )
 }
