@@ -28,3 +28,11 @@ interface SetComments {
   type: 'SET_COMMENTS'
   payload: string
 }
+
+// Type to use for the template in Redux's Dispatch type
+type Actions =
+  | ClearFeedback
+  | SetFeeling
+  | SetUnderstanding
+  | SetSupported
+  | SetComments
