@@ -1,5 +1,9 @@
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
+import CommentsStep from '../CommentsStep/CommentsStep'
 import FeelingStep from '../FeelingStep/FeelingStep'
+import Review from '../Review/Review'
+import SupportedStep from '../SupportedStep/SupportedStep'
+import UnderstandingStep from '../UnderstandingStep/UnderstandingStep'
 import './App.css'
 
 function App() {
@@ -13,6 +17,18 @@ function App() {
         <Switch>
           <Route path="/feeling">
             <FeelingStep />
+          </Route>
+          <Route path="/understanding">
+            <UnderstandingStep />
+          </Route>
+          <Route path="/supported">
+            <SupportedStep />
+          </Route>
+          <Route path="/comments">
+            <CommentsStep />
+          </Route>
+          <Route path="/review">
+            <Review />
           </Route>
           <Route path="/">
             <Redirect to="/feeling" />
