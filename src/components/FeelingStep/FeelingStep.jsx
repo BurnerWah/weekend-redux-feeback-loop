@@ -15,6 +15,7 @@ export default function FeelingStep() {
         onChange={(e) => setFeelingInput(e.target.valueAsNumber)}
         type="number"
         placeholder="1-5"
+        data-testid="input"
       />
       <button
         onClick={() => {
@@ -24,6 +25,7 @@ export default function FeelingStep() {
             payload: feelingInput,
           })
         }}
+        data-testid="next"
       >
         Next
       </button>
