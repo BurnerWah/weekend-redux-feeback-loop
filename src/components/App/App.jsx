@@ -3,6 +3,7 @@ import CommentsStep from '../CommentsStep/CommentsStep'
 import FeelingStep from '../FeelingStep/FeelingStep'
 import Review from '../Review/Review'
 import SupportedStep from '../SupportedStep/SupportedStep'
+import Thanks from '../Thanks/Thanks'
 import UnderstandingStep from '../UnderstandingStep/UnderstandingStep'
 import './App.css'
 
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/review">
             <Review />
+          </Route>
+          <Route path="/thanks">
+            <Thanks />
           </Route>
           <Route path="/">
             <Redirect to="/feeling" />
