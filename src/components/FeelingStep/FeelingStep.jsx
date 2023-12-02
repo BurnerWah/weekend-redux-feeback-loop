@@ -21,7 +21,7 @@ export default function FeelingStep() {
       />
       <button
         onClick={() => {
-          console.log('feelingInput:', feeling)
+          console.log('feeling:', feeling)
           dispatch({
             type: 'SET_FEELING',
             payload: feeling,
