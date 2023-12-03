@@ -5,6 +5,13 @@ interface RootState {
   comments: string
 }
 
+interface FeedbackReq {
+  feeling: number
+  understanding: number
+  supported: number
+  comments: string
+}
+
 interface ClearFeedback {
   type: 'CLEAR_FEEDBACK'
 }

@@ -3,8 +3,32 @@ const pool = require('../modules/pool')
 
 const router = Router()
 
-// TODO: This route adds a new feedback entry
-router.post('/', (req, res) => {})
+router.post('/', async (req, res) => {
+  /** @type {FeedbackReq} */
+  const feedback = req.body
+  try {
+    await pool.query({
+      text: /*sql*/ `
+        INSERT INTO "feedback" (
+          "feeling",
+          "understanding",
+          "support",
+          "comments"
+        ) VALUES ($1, $2, $3, $4);
+      `,
+      values: [
+        feedback.feeling,
+        feedback.understanding,
+        feedback.supported,
+        feedback.comments,
+      ],
+    })
+    res.sendStatus(201)
+  } catch (error) {
+    console.error(error)
+    res.sendStatus(500)
+  }
+})
 
 // DO NOT EDIT THIS ROUTE
 // This route must return all feedback.
