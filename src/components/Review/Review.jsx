@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
@@ -25,10 +26,19 @@ export default function Review() {
       <p>Support: {supported}</p>
       <p>Comments: {comments}</p>
       <button
-        onClick={() => {
-          // TODO: Actually submit the feedback
-          dispatch({ type: 'CLEAR_FEEDBACK' })
-          history.push('/thanks')
+        onClick={async () => {
+          try {
+            await axios.post('/feedback', {
+              feeling,
+              understanding,
+              supported,
+              comments,
+            })
+            dispatch({ type: 'CLEAR_FEEDBACK' })
+            history.push('/thanks')
+          } catch (error) {
+            console.error(error)
+          }
         }}
         data-testid="next"
       >
